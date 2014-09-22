@@ -8,7 +8,7 @@ function stop_svc {
     service rsyslog stop
 }
 
-trap 'stop_svc' EXIT
+trap 'stop_svc' SIGTERM
 
 while true
 do
