@@ -6,6 +6,7 @@ service postfix start
 function stop_svc {
     service postfix stop
     service rsyslog stop
+    exit
 }
 
 trap 'stop_svc' SIGTERM
