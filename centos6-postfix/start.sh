@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+# for the Postfix's myhostname  bug
+if [ -n "$POSTFIX_MYHOSTNAME" ]
+then
+    echo "myhostname = $POSTFIX_MYHOSTNAME" >> /etc/postfix/main.cf
+fi
+
 service rsyslog start
 service postfix start
 
